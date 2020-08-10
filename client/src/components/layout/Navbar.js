@@ -35,7 +35,7 @@ export const Navbar = ({ title, icon }) => {
         <Link to="/register">Register</Link>
       </li>
       <li>
-        <Link to="/Login">Login</Link>
+        <Link to="/login">Login</Link>
       </li>
     </Fragment>
   );
@@ -43,7 +43,8 @@ export const Navbar = ({ title, icon }) => {
   return (
     <div className="navbar bg-primary">
       <h1>
-        <i className={icon}>{title}</i>
+        {/* className={icon} */}
+        <i>{title}</i>
       </h1>
       <ul>
         {/* <li>
