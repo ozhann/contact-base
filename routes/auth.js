@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const auth = require('../middleware/auth');
@@ -28,7 +28,7 @@ router.get('/', auth, async (req, res) => {
 router.post(
   '/',
   [
-    check('Please include a valid email').isEmail(),
+    check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists(),
   ],
   async (req, res) => {
